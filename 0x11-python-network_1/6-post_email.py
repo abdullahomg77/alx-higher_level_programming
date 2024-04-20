@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ In url and email send post
-displays body 
+displays body
 """
 
 from sys import argv
