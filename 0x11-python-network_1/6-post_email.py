@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""script that:
-- of the X-Request-Id variable found in the header ofthe response.
+""" In url and email send post
+displays body 
 """
-import sys
-import urllib.request
+
+from sys import argv
+import requests
+
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    payload = {'email': argv[2]}
+    req = requests.post(argv[1], data=payload)
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    print(req.text)
